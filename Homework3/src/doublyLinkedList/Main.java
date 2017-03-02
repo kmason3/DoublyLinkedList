@@ -6,6 +6,17 @@ public class Main {
 		DoublyLinkedList list = new DoublyLinkedList();
 		
 		System.out.println(list.isEmpty());
+		System.out.println(list.getSize());
+		System.out.println(list.first());
+		System.out.println(list.last());
+		
+		Node first = new Node("A");
+		
+		list.addFirst(first);
+		
+		System.out.println(list.getSize());
+		System.out.println(list.first());
+		
 	}
 
 }

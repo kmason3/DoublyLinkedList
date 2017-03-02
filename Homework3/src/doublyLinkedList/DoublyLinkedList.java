@@ -57,4 +57,12 @@ public class DoublyLinkedList {
 		return trailer.getPrev().getElement();
 	}
 
+	public void addFirst(Node e) {
+
+		if (isEmpty()) {
+			header.setNext(e);
+			size++;
+
+		}
+	}
 }
