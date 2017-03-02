@@ -3,6 +3,7 @@ package doublyLinkedList;
 public class DoublyLinkedList {
 
 	// instance variables
+
 	private Node header;
 	private Node trailer;
 	private int size;
@@ -10,6 +11,7 @@ public class DoublyLinkedList {
 	/**
 	 * Constructor for an empty list
 	 */
+
 	public DoublyLinkedList() {
 		header = new Node(null, null, null);
 		trailer = new Node(null, header, null);
@@ -19,8 +21,9 @@ public class DoublyLinkedList {
 	/**
 	 * gets size
 	 * 
-	 * @return int
+	 * @return int size
 	 */
+
 	public int getSize() {
 		return size;
 	}
@@ -30,6 +33,7 @@ public class DoublyLinkedList {
 	 * 
 	 * @return boolean
 	 */
+
 	public boolean isEmpty() {
 		return size == 0;
 	}
@@ -39,6 +43,7 @@ public class DoublyLinkedList {
 	 * 
 	 * @return String
 	 */
+
 	public String first() {
 		if (isEmpty())
 			return null;
@@ -57,19 +62,52 @@ public class DoublyLinkedList {
 		return trailer.getPrev().getElement();
 	}
 
+	/**
+	 * add node element to the position right after the header
+	 * 
+	 * @param Node
+	 *            e
+	 */
+
 	public void addFirst(Node e) {
 
-				
-		System.out.println("Check");
 		addBetween(e, header, header.getNext());
 
 	}
-	
-	public void addBetween(Node e, Node p, Node n){
-		
+
+	/**
+	 * add node between two others
+	 * 
+	 * @param Node
+	 *            e
+	 * @param Node
+	 *            p
+	 * @param Node
+	 *            n
+	 */
+
+	public void addBetween(Node e, Node p, Node n) {
+
 		p.setNext(e);
 		n.setPrev(e);
-		
+
 		size++;
 	}
+	
+	public String toString(){
+		String result = "";
+		Node current = header;
+		
+		while(current.getNext() != null){
+			current = current.getNext();
+            result += current.getElement() + ", ";
+		}
+		return "List: " + result;
+	}
+	public void printForward() {
+		
+		System.out.println(toString() + last());
+
+	}
+
 }

@@ -24,6 +24,7 @@ public class Node {
 	
 	//getters and setters
 	public String getElement() {
+				
 		return element;
 	}
 
