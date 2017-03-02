@@ -59,10 +59,17 @@ public class DoublyLinkedList {
 
 	public void addFirst(Node e) {
 
-		if (isEmpty()) {
-			header.setNext(e);
-			size++;
+				
+		System.out.println("Check");
+		addBetween(e, header, header.getNext());
 
-		}
+	}
+	
+	public void addBetween(Node e, Node p, Node n){
+		
+		p.setNext(e);
+		n.setPrev(e);
+		
+		size++;
 	}
 }

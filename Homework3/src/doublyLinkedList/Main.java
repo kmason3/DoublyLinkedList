@@ -11,11 +11,19 @@ public class Main {
 		System.out.println(list.last());
 		
 		Node first = new Node("A");
+		Node next = new Node("B");
 		
 		list.addFirst(first);
 		
 		System.out.println(list.getSize());
 		System.out.println(list.first());
+		
+		list.addFirst(next);
+		
+		System.out.println(list.getSize());
+		System.out.println(list.first());
+		System.out.println(list.last());
+		
 		
 	}
 
