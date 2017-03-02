@@ -1,6 +1,7 @@
 package doublyLinkedList;
 
 public class DoublyLinkedList {
+
 	// instance variables
 	private Node header;
 	private Node trailer;

@@ -5,14 +5,19 @@ public class Node {
 	private String element;
 	private Node prev;
 	private Node next;
+	
+	public Node (String input){
+		this.element = input;
+	}
+	
 	/**
 	 * constructor for node 
 	 * @param String element
 	 * @param Node previous
 	 * @param Node next
 	 */
-	public Node (String e, Node p, Node n){
-		setElement(e);
+	public Node (String input, Node p, Node n){
+		setElement(input);
 		setPrev(p);
 		setNext(n);
 	}
