@@ -93,21 +93,21 @@ public class DoublyLinkedList {
 
 		size++;
 	}
-	
-	public String toString(){
+
+	/**
+	 * loops through nodes, making a list of the elements as strings then prints them
+	 * 
+	 * 
+	 */
+	public void printForward() {
 		String result = "";
 		Node current = header;
-		
-		while(current.getNext() != null){
-			current = current.getNext();
-            result += current.getElement() + ", ";
-		}
-		return "List: " + result;
-	}
-	public void printForward() {
-		
-		System.out.println(toString() + last());
 
+		while (current.getNext() != null) {
+			current = current.getNext();
+			result += current.getElement() + ", ";
+		}
+		System.out.println("List: " + result + last());
 	}
 
 }
