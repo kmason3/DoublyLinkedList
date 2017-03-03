@@ -4,8 +4,8 @@ public class DoublyLinkedList {
 
 	// instance variables
 
-	private Node header;
-	private Node trailer;
+	private Node head;
+	private Node tail;
 	private int size;
 
 	/**
@@ -13,9 +13,11 @@ public class DoublyLinkedList {
 	 */
 
 	public DoublyLinkedList() {
-		header = new Node(null, null, null);
-		trailer = new Node(null, header, null);
-		header.setNext(trailer);
+		head = new Node(null);
+		tail = new Node(null);
+		head.setNext(tail);
+		tail.setPrev(head);
+		
 	}
 
 	/**
@@ -47,7 +49,7 @@ public class DoublyLinkedList {
 	public String first() {
 		if (isEmpty())
 			return null;
-		return header.getNext().getElement();
+		return head.getNext().getElement();
 
 	}
 
@@ -59,7 +61,7 @@ public class DoublyLinkedList {
 	public String last() {
 		if (isEmpty())
 			return null;
-		return trailer.getPrev().getElement();
+		return tail.getPrev().getElement();
 	}
 
 	/**
@@ -68,11 +70,21 @@ public class DoublyLinkedList {
 	 * @param Node
 	 *            e
 	 */
-
+	
 	public void addFirst(Node e) {
-
-		addBetween(e, header, header.getNext());
-
+		if(isEmpty())
+		addBetween(e, head, tail);
+		else
+			addBetween(e, head, head.getNext());
+	}
+	
+	public void addLast(Node e){
+		Node last = tail.getPrev();
+		
+		last.setNext(e);
+		
+		
+		
 	}
 
 	/**
@@ -101,13 +113,16 @@ public class DoublyLinkedList {
 	 */
 	public void printForward() {
 		String result = "";
-		Node current = header;
+		Node current = head;
 
 		while (current.getNext() != null) {
 			current = current.getNext();
-			result += current.getElement() + ", ";
+			result += current.getElement();
 		}
-		System.out.println("List: " + result + last());
+		if(size == 1){System.out.println("List: " + result );}
+		else	
+		System.out.println("List: " + result + ", " + last());
+		
 	}
 
 }
