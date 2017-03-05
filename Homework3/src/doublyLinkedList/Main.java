@@ -22,7 +22,7 @@ public class Main {
 		Node f = new Node("F");
 		Node g = new Node("G");
 		Node h = new Node("H");
-		Node i = new Node("I");
+//		Node i = new Node("I");
 ////		
 		list.addBetween(c, b, a);
 		list.addBetween(d, c, a);
