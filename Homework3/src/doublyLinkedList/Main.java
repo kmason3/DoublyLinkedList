@@ -16,20 +16,20 @@ public class Main {
 //////		System.out.println(list.last());
 ////		
 ////		
-//		Node c = new Node("C");
-//		Node d = new Node("D");
-//		Node e = new Node("E");
-//		Node f = new Node("F");
-//		Node g = new Node("G");
-//		Node h = new Node("H");
-//		Node i = new Node("I");
+		Node c = new Node("C");
+		Node d = new Node("D");
+		Node e = new Node("E");
+		Node f = new Node("F");
+		Node g = new Node("G");
+		Node h = new Node("H");
+		Node i = new Node("I");
 ////		
-//		list.addBetween(c, b, a);
-//		list.addBetween(d, c, a);
-//		list.addBetween(e, d, a);
-//		list.addBetween(f, e, a);
-//		list.addBetween(g, f, a);
-//		list.addBetween(h, g, a);
+		list.addBetween(c, b, a);
+		list.addBetween(d, c, a);
+		list.addBetween(e, d, a);
+		list.addBetween(f, e, a);
+		list.addBetween(g, f, a);
+		list.addBetween(h, g, a);
 //		list.addLast(i);
 ////		
 ////		

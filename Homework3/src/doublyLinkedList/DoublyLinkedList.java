@@ -17,7 +17,7 @@ public class DoublyLinkedList {
 		tail = new Node(null);
 		head.setNext(tail);
 		tail.setPrev(head);
-		
+
 	}
 
 	/**
@@ -70,21 +70,19 @@ public class DoublyLinkedList {
 	 * @param Node
 	 *            e
 	 */
-	
+
 	public void addFirst(Node e) {
-		if(isEmpty())
-		addBetween(e, head, tail);
+		if (isEmpty())
+			addBetween(e, head, tail);
 		else
 			addBetween(e, head, head.getNext());
 	}
-	
-	public void addLast(Node e){
+
+	public void addLast(Node e) {
 		Node last = tail.getPrev();
-		
+
 		last.setNext(e);
-		
-		
-		
+
 	}
 
 	/**
@@ -107,7 +105,8 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * loops through nodes, making a list of the elements as strings then prints them
+	 * loops through nodes, making a list of the elements as strings then prints
+	 * them
 	 * 
 	 * 
 	 */
@@ -119,10 +118,11 @@ public class DoublyLinkedList {
 			current = current.getNext();
 			result += current.getElement();
 		}
-		if(size == 1){System.out.println("List: " + result );}
-		else	
-		System.out.println("List: " + result + ", " + last());
-		
+		if (size == 1) {
+			System.out.println("List: " + result);
+		} else
+			System.out.println("List: " + result + last());
+
 	}
 
 }
