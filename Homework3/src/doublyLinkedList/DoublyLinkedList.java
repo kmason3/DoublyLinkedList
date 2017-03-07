@@ -111,18 +111,20 @@ public class DoublyLinkedList {
 	 * 
 	 */
 	public void printForward() {
-		String result = "";
-		Node current = head;
 
-		while (current.getNext() != null) {
+		Node current = head.getNext();
+
+		while (current != null) {
+
+			System.out.print(current.getElement());
 			current = current.getNext();
-			result += current.getElement();
+			// result += current.getElement();
 		}
-		if (size == 1) {
-			System.out.println("List: " + result);
-		} else
-			System.out.println("List: " + result + last());
-
+		// if (size == 1) {
+		// System.out.println("List: " + result);
+		// } else
+		// System.out.println("List: " + result + last());
+		//
 	}
 
 }

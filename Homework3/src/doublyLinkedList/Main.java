@@ -8,7 +8,7 @@ public class Main {
 		Node a = new Node("A");
 		Node b = new Node("B");
 //		
-		list.addFirst(a);
+//		list.addFirst(a);
 		list.addFirst(b);
 ////		
 //////		System.out.println(list.getSize());
@@ -35,7 +35,7 @@ public class Main {
 ////		
 		
 		System.out.println(list.getSize());
-//		System.out.println(list.first());
+		System.out.println(list.first());
 //		System.out.println(list.last());
 //				
 		list.printForward();
