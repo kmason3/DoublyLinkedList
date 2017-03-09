@@ -42,6 +42,9 @@ public class Main {
 //		list.printBackward();
 //		System.out.println(list.last());
 		
+		list.addLast("d");
+		list.printForward();
+		System.out.println(list.getSize());
 		
 		
 	}

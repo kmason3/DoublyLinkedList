@@ -14,8 +14,7 @@ public class DoublyLinkedList {
 
 	public DoublyLinkedList() {
 		this.head = new Node(null);
-		this.setTail(new Node(null));
-	
+		this.tail = new Node(null);
 
 	}
 
@@ -40,43 +39,50 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * add node element to the position right after the header
+	 * add node element to the first position
 	 * 
-	 * @param Node
-	 *            e
+	 * @param String
+	 *            input
+	 * 
 	 */
 
 	public void addFirst(String input) {
-		
+
 		Node newNode = new Node(input);
-		
-		if(isEmpty()){
-		this.head = newNode;
-		size++;}
-		else{
-		newNode.setNext(head);
-		this.head = newNode;
-		size++;}
-		
+
+		if (isEmpty()) {
+			this.head = newNode;
+
+			size++;
+		} else {
+
+			head.setPrev(newNode);
+
+			newNode.setNext(head);
+
+			this.head = newNode;
+			size++;
+		}
+
 	}
 
-	/**
-	 * add node between two others
-	 * 
-	 * @param Node
-	 *            e
-	 * @param Node
-	 *            p
-	 * @param Node
-	 *            n
-	 */
+	public void addLast(String input) {
+		Node newNode = new Node(input);
 
-	public void addBetween(Node e, Node p, Node n) {
+		if (isEmpty()) {
+			this.tail = newNode;
 
-		p.setNext(e);
-		n.setPrev(e);
+			size++;
+		}
+		Node current = head;
 
+		while (current.getNext() != null) {
+			current = current.getNext();
+		}
+		tail.setPrev(newNode);
+		current.setNext(newNode);
 		size++;
+
 	}
 
 	/**
@@ -96,17 +102,10 @@ public class DoublyLinkedList {
 
 			System.out.print(current.getElement());
 			current = current.getNext();
-			// result += current.getElement();
+
 		}
+		System.out.println("");
 
-	}
-
-	public Node getTail() {
-		return tail;
-	}
-
-	public void setTail(Node tail) {
-		this.tail = tail;
 	}
 
 }
