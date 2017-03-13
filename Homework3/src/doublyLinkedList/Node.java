@@ -1,30 +1,34 @@
 package doublyLinkedList;
 
 public class Node {
-	//instance variables
+	// instance variables
 	private String element;
 	private Node prev;
 	private Node next;
-	
-	public Node (String input){
+
+	public Node(String input) {
 		this.element = input;
 	}
-	
+
 	/**
-	 * constructor for node 
-	 * @param String element
-	 * @param Node previous
-	 * @param Node next
+	 * constructor for node
+	 * 
+	 * @param String
+	 *            element
+	 * @param Node
+	 *            previous
+	 * @param Node
+	 *            next
 	 */
-	public Node (String input, Node p, Node n){
+	public Node(String input, Node p, Node n) {
 		setElement(input);
 		setPrev(p);
 		setNext(n);
 	}
-	
-	//getters and setters
+
+	// getters and setters
 	public String getElement() {
-				
+
 		return element;
 	}
 

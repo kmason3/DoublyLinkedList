@@ -7,44 +7,20 @@ public class Main {
 //			
 		
 //		
-		list.addFirst("a");
-		list.addFirst("b");
-		list.addFirst("c");
-////		
-//////		System.out.println(list.getSize());
-//////		System.out.println(list.first());
-//////		System.out.println(list.last());
-////		
-////		
-//		Node c = new Node("C");
-//		Node d = new Node("D");
-//		Node e = new Node("E");
-//		Node f = new Node("F");
-//		Node g = new Node("G");
-//		Node h = new Node("H");
-//		Node i = new Node("I");
-////		
-//		list.addBetween(c, b, a);
-//		list.addBetween(d, c, a);
-//		list.addBetween(e, d, a);
-//		list.addBetween(f, e, a);
-//		list.addBetween(g, f, a);
-//		list.addBetween(h, g, a);
-//		list.addLast(i);
-////		
-////		
-		
-		System.out.println(list.getSize());
-		
-//		System.out.println(list.last());
-//				
+//		list.addFirst("a");
+		list.add("b");
+		list.add("c");
+		list.add("a");
+		list.add("d");
+		list.add("f");
 		list.printForward();
-//		list.printBackward();
-//		System.out.println(list.last());
 		
-		list.addLast("d");
-		list.printForward();
-		System.out.println(list.getSize());
+//		list.add("a");
+		
+
+		
+		
+
 		
 		
 	}
