@@ -15,6 +15,8 @@ public class DoublyLinkedList {
 	public DoublyLinkedList() {
 		this.head = new Node(null);
 		this.tail = new Node(null);
+		head.setNext(tail);
+		tail.setPrev(head);
 
 	}
 
@@ -52,11 +54,11 @@ public class DoublyLinkedList {
 
 		if (isEmpty()) {
 			this.head = newNode;
+			head.setNext(tail);
+			tail.setPrev(head);
 
 			size++;
-			System.out.println("The head is: " + this.head.getElement());
 
-			
 		} else {
 
 			head.setPrev(newNode);
@@ -65,8 +67,7 @@ public class DoublyLinkedList {
 
 			this.head = newNode;
 			size++;
-			
-			System.out.println("The head is: " + this.head.getElement());
+
 		}
 
 	}
@@ -84,45 +85,50 @@ public class DoublyLinkedList {
 		while (current.getNext() != null) {
 			current = current.getNext();
 		}
-		tail= newNode;
+
 		current.setNext(newNode);
-		
+		newNode.setPrev(tail);
+		this.tail = newNode;
+
 		tail.setPrev(current);
 		size++;
 		System.out.println("the tail is: " + this.tail.getElement());
-		System.out.println("before the tail is: " + tail.getPrev().getElement());
-		
-		
+		System.out
+				.println("before the tail is: " + tail.getPrev().getElement());
 
 	}
 
 	public void add(String input) {
+		Node current = head;
+		Node newNode = new Node(input);
 
-		if (isEmpty() || head.getElement().compareTo(input) >= 0) {
+		if (isEmpty()) {
+			head = newNode;
+
+		}
+
+		else if (current.getElement().compareTo(input) >= 0) {
 			addFirst(input);
 		}
-		if(tail ==null || head.getElement().compareTo(input)<0){
-			addLast(input);
-		}
-		
-		
-		
-		else{
-			
-
-			Node current = head;
-			Node newNode = new Node(input);
-			
-			
-			while(current != null && newNode.getElement().compareTo(current.getElement()) > 0){
-				
+		// if(tail.getElement().compareTo(input)<0){
+		// addLast(input);
+		// }
+		else {
+			while (input.compareTo(current.getElement()) > 0
+					&& current.getNext() != null) {
+				// System.out.println("check");
 				current = current.getNext();
-				
 			}
-			
-			
+
+			current.getPrev().setNext(newNode);
+			newNode.setPrev(current.getPrev());
+			newNode.setNext(current);
+			current.setPrev(newNode);
+			// System.out.println("check2");
+
 		}
-			
+		size++;
+
 	}
 
 	/**
@@ -140,7 +146,7 @@ public class DoublyLinkedList {
 
 		while (current != null) {
 
-			System.out.print(current.getElement());
+			System.out.print(current.getElement() + ", ");
 			current = current.getNext();
 
 		}

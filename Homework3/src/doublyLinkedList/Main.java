@@ -8,11 +8,14 @@ public class Main {
 		
 //		
 //		list.addFirst("a");
-		list.add("b");
+		list.add("beta");
+//		list.addFirst("c");
+		list.add("alpha");
+		list.printForward();
+//		list.add("b");
 		list.add("c");
-		list.add("a");
 		list.add("d");
-		list.add("f");
+		list.add("e");
 		list.printForward();
 		
 //		list.add("a");
