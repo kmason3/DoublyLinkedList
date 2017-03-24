@@ -127,6 +127,25 @@ public class DoublyLinkedList {
 		size++;
 
 	}
+	
+	public boolean find(String input){
+		if(isEmpty())
+			return false;
+		
+		Node current = head;
+		
+		if(input == current.getElement())
+			return true;
+		
+		while(current.getNext() != null){
+			current = current.getNext();
+			
+			if(current.getElement() == input)
+				return true;
+		}
+		return false;
+		
+	}
 
 	/**
 	 * loops through nodes, making a list of the elements as strings then prints

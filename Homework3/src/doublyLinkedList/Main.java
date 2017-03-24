@@ -17,7 +17,8 @@ public class Main {
 		list.add("i");
 		list.add("c");
 		list.printForward();
-		
+		System.out.println(list.find("a"));
+		System.out.println(list.find("z"));
 
 		
 		
