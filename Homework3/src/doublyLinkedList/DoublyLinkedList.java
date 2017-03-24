@@ -71,6 +71,11 @@ public class DoublyLinkedList {
 
 	}
 
+	/**
+	 * Adds string to end of list
+	 * 
+	 * @param input
+	 */
 	public void addLast(String input) {
 		Node newNode = new Node(input);
 
@@ -93,6 +98,11 @@ public class DoublyLinkedList {
 
 	}
 
+	/**
+	 * Adds to list in alphabetical order
+	 * 
+	 * @param input
+	 */
 	public void add(String input) {
 		Node current = head;
 		Node newNode = new Node(input);
@@ -127,30 +137,35 @@ public class DoublyLinkedList {
 		size++;
 
 	}
-	
-	public boolean find(String input){
-		if(isEmpty())
+
+	/**
+	 * Finds if input is in list
+	 * 
+	 * @param input
+	 * @return
+	 */
+	public boolean find(String input) {
+		if (isEmpty())
 			return false;
-		
+
 		Node current = head;
-		
-		if(input == current.getElement())
+
+		if (input == current.getElement())
 			return true;
-		
-		while(current.getNext() != null){
+
+		while (current.getNext() != null) {
 			current = current.getNext();
-			
-			if(current.getElement() == input)
+
+			if (current.getElement() == input)
 				return true;
 		}
 		return false;
-		
+
 	}
 
 	/**
 	 * loops through nodes, making a list of the elements as strings then prints
-	 * them
-	 * 
+	 * them.
 	 * 
 	 */
 	public void printForward() {
@@ -164,6 +179,23 @@ public class DoublyLinkedList {
 
 			System.out.print(current.getElement() + " ");
 			current = current.getNext();
+
+		}
+		System.out.println("");
+
+	}
+
+	public void printBackward() {
+
+		if (isEmpty())
+			System.out.println("List is Empty");
+
+		Node current = tail;
+
+		while (current != null) {
+
+			System.out.print(current.getElement() + " ");
+			current = current.getPrev();
 
 		}
 		System.out.println("");
