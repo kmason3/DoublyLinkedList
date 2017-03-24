@@ -66,7 +66,6 @@ public class DoublyLinkedList {
 			newNode.setNext(head);
 
 			this.head = newNode;
-			size++;
 
 		}
 
@@ -91,10 +90,6 @@ public class DoublyLinkedList {
 		this.tail = newNode;
 
 		tail.setPrev(current);
-		size++;
-		System.out.println("the tail is: " + this.tail.getElement());
-		System.out
-				.println("before the tail is: " + tail.getPrev().getElement());
 
 	}
 
@@ -110,22 +105,24 @@ public class DoublyLinkedList {
 		else if (current.getElement().compareTo(input) >= 0) {
 			addFirst(input);
 		}
-		// if(tail.getElement().compareTo(input)<0){
-		// addLast(input);
-		// }
+
 		else {
 			while (input.compareTo(current.getElement()) > 0
 					&& current.getNext() != null) {
-				// System.out.println("check");
 				current = current.getNext();
 			}
 
-			current.getPrev().setNext(newNode);
-			newNode.setPrev(current.getPrev());
-			newNode.setNext(current);
-			current.setPrev(newNode);
-			// System.out.println("check2");
+			if (current.getNext() == null
+					&& input.compareTo(current.getElement()) > 0) {
+				addLast(input);
 
+			} else {
+				current.getPrev().setNext(newNode);
+				newNode.setPrev(current.getPrev());
+				newNode.setNext(current);
+				current.setPrev(newNode);
+
+			}
 		}
 		size++;
 
@@ -146,7 +143,7 @@ public class DoublyLinkedList {
 
 		while (current != null) {
 
-			System.out.print(current.getElement() + ", ");
+			System.out.print(current.getElement() + " ");
 			current = current.getNext();
 
 		}
