@@ -164,9 +164,63 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * loops through nodes, making a list of the elements as strings then prints
-	 * them.
+	 * Deletes node containing input string
 	 * 
+	 * @param input
+	 */
+
+	public void deleteNode(String input) {
+
+		if (isEmpty()) {
+			System.out.println("List is empty.");
+		}
+
+		if (head.getElement() == input) {
+
+			head.getNext().setPrev(null);
+			head = head.getNext();
+		}
+
+		if (tail.getElement() == input) {
+			tail.getPrev().setNext(null);
+			tail = tail.getPrev();
+		}
+
+		Node current = head;
+		while (current.getNext() != null) {
+			current = current.getNext();
+
+			if (current.getElement() == input) {
+
+				current.getPrev().setNext(current.getNext());
+				current.getNext().setPrev(current.getPrev());
+
+			}
+		}
+
+	}
+
+	/**
+	 * Deletes entire list.
+	 */
+	public void deleteList() {
+		if (isEmpty()) {
+			System.out.println("List is Empty.");
+		}
+
+		else {
+			head.setNext(tail);
+			tail.setPrev(head);
+			head = null;
+			tail = null;
+			size = 0;
+
+			System.out.println("List has been deleted!");
+		}
+	}
+
+	/**
+	 * Prints list forward
 	 */
 	public void printForward() {
 
@@ -184,6 +238,10 @@ public class DoublyLinkedList {
 		System.out.println("");
 
 	}
+
+	/**
+	 * Prints list backward
+	 */
 
 	public void printBackward() {
 
